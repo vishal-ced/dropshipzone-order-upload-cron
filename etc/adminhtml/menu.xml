@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CedCommerce
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End User License Agreement(EULA)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://cedcommerce.com/license-agreement.txt
+ *
+ * @category  Ced
+ * @package   Ced_Dropship
+ * @author    CedCommerce Core Team <connect@cedcommerce.com>
+ * @copyright Copyright CEDCOMMERCE(http://cedcommerce.com/)
+ * @license   http://cedcommerce.com/license-agreement.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+            id="Ced_Dropship::dropship"
+            title="Dropshipzone"
+            module="Ced_Dropship"
+            sortOrder="25"
+            resource="Ced_Dropship::dropship"
+        />
+
+        <add
+            id="Ced_Dropship::product"
+            title="Product(s)"
+            module="Ced_Dropship"
+            sortOrder="10"
+            action="dropship/product/index"
+            resource="Ced_Dropship::product"
+            parent="Ced_Dropship::dropship"
+        />
+
+        <add
+            id="Ced_Dropship::order"
+            title="Export Orders(s)"
+            module="Ced_Dropship"
+            sortOrder="15"
+            action="dropship/order/index"
+            resource="Ced_Dropship::order"
+            parent="Ced_Dropship::dropship"
+        />
+
+        <add
+            id="Ced_Dropship::config"
+            title="Configuration"
+            module="Ced_Dropship"
+            sortOrder="20"
+            action="admin/system_config/edit/section/dropship"
+            resource="Ced_Dropship::config"
+            parent="Ced_Dropship::dropship"
+        />
+
+        <add
+            id="Ced_Dropship::activity_log"
+            title="Logs"
+            module="Ced_Dropship"
+            sortOrder="25"
+            action="integrator/log/index"
+            resource="Ced_Dropship::activity_log"
+            parent="Ced_Dropship::dropship"
+        />
+
+        <add
+            id="Ced_Dropship::extras"
+            title="Extras"
+            translate="title"
+            module="Ced_Dropship"
+            sortOrder="45"
+            parent="Ced_Dropship::dropship"
+            resource="Ced_Dropship::dropship"
+        />
+        
+        <add
+            id="Ced_Dropship::dropshipsupport"
+            title="Help and Support"
+            translate="title"
+            module="Ced_Dropship"
+            sortOrder="10"
+            action="dropship/help"
+            resource="Ced_Dropship::dropshipsupport"
+            parent="Ced_Dropship::extras"/>
+    </menu>
+</config>

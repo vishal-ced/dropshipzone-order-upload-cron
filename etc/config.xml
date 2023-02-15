@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <dropship>
+            <general>
+                <customerEmail>abc@example.com</customerEmail>
+                <debug>0</debug>
+            </general>
+            <product>
+                <category>1</category>
+                <productindidable>0</productindidable>
+                <productoutofstock>0</productoutofstock>
+            </product>
+            <order>
+                <createOrderWhen>ORDER_PLACED</createOrderWhen>
+            </order>
+            <cron>
+                <productCron>0</productCron>
+                <batch>1</batch>
+            </cron>
+        </dropship>
+    </default>
+</config>

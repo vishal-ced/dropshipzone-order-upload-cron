@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CedCommerce
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the End User License Agreement(EULA)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://cedcommerce.com/license-agreement.txt
+ *
+ * @category  Ced
+ * @package   Ced_Dropship
+ * @author    CedCommerce Core Team <connect@cedcommerce.com>
+ * @copyright Copyright CEDCOMMERCE(http://cedcommerce.com/)
+ * @license   http://cedcommerce.com/license-agreement.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="dropship" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="0">
+            <label>Dropship Settings</label>
+            <!-- Default tab id cedcommerce created in another extension -->
+            <tab>cedcommerce</tab>
+            <resource>Ced_Dropship::dropship</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Settings</label>
+                <field id="customerEmail" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Customer Email</label>
+                    <comment><![CDATA[Customer Email of dropship.]]></comment>
+                    <validate>required-entry validate-email</validate>
+                </field>
+                <field id="password" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Password</label>
+                    <comment><![CDATA[Password]]></comment>
+                </field>
+                <field id="debug" translate="label" type="select" sortOrder="23" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            
+            <group id="product" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Product Settings</label>
+
+                <field id="category" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Create Category</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="productindidable" translate="label" type="select" sortOrder="12" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Create Products in disable state</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="productoutofstock" translate="label" type="select" sortOrder="14" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Create Out of Stock Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="skuPrefix" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>SKU prefix</label>
+                     <comment><![CDATA[Word to added in SKU before import.]]></comment>
+                </field>
+
+                <field id="IncPer" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Increase By Percent</label>
+                     <comment><![CDATA[Increase price by added amount in percent while importing product]]></comment>
+                     <validate>validate-number</validate>
+                </field>
+
+                <field id="IncFix" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Increase Fixed Price</label>
+                     <comment><![CDATA[Increase added amount in price while importing product. In the case both fields are filled then preference will go to percent.]]></comment>
+                     <validate>validate-number</validate>
+                </field>
+            </group>
+
+            <group id="order" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Order Setting(s)</label>
+
+                <field id="createOrderWhen" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Create Order When</label>
+                    <source_model>Ced\Dropship\Model\Config\Source\Createorder</source_model>
+                </field>
+                
+                <field id="cumstomer_comment" translate="label" type="textarea" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Customer comment</label>
+                    <comment>Customer comment in and order request to be send to Dropship-Zone</comment>
+                </field>
+            </group>
+
+            <group id="cron" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Cron Setting(s)</label>
+
+                <field id="productCron" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable Product Cron</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Enable cron after product import.]]></comment>
+                </field>
+
+                <field id="orderUploadCron" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable Order Upload Cron</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Enable cron after order upload.]]></comment>
+                </field>
+
+                <field id="batch" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Batch Id</label>
+                    <!-- <frontend_model>Ced\Dropship\Block\Adminhtml\Config\Field\Disable</frontend_model> -->
+                </field>
+            </group>
+
+        </section>
+    </system>
+</config>
